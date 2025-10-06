@@ -1,0 +1,475 @@
+/* style.css - Стили для сайта Наумовой Евгении */
+
+:root {
+    --pale-pink: #f8e9e9;
+    --soft-lavender: #e6e1f2;
+    --mint-cream: #f0f7f4;
+    --light-beige: #f9f4e8;
+    --dusty-rose: #d4a8b0;
+    --soft-grey: #a8a8a8;
+    --charcoal: #4a4a4a;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--mint-cream);
+    color: var(--charcoal);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, var(--pale-pink), var(--soft-lavender));
+    padding: 3rem 0 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.header-decoration {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    top: -150px;
+    right: -100px;
+    z-index: 1;
+}
+
+.header-decoration::after {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    bottom: -50px;
+    left: -80px;
+}
+
+.profile-container {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+}
+
+.profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid var(--light-beige);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: var(--transition);
+}
+
+.profile-img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+h1 {
+    font-size: 2.8rem;
+    margin-bottom: 0.5rem;
+    color: var(--charcoal);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.tagline {
+    font-size: 1.3rem;
+    color: var(--dusty-rose);
+    margin-bottom: 1rem;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.intro {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    font-size: 1.15rem;
+    color: var(--charcoal);
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.highlight {
+    color: var(--dusty-rose);
+    font-weight: 500;
+}
+
+/* Container Styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--dusty-rose);
+    font-size: 2.2rem;
+    position: relative;
+    font-weight: 500;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(to right, transparent, var(--dusty-rose), transparent);
+    margin: 0.8rem auto;
+}
+
+/* Posts Grid Styles */
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2.5rem;
+}
+
+.post-card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.07);
+    transition: var(--transition);
+    position: relative;
+}
+
+.post-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(to right, var(--pale-pink), var(--dusty-rose));
+    z-index: 1;
+}
+
+.post-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+
+.post-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.post-image.large {
+    height: 300px;
+}
+
+.post-card:hover .post-image {
+    transform: scale(1.05);
+}
+
+.post-content {
+    padding: 1.8rem;
+}
+
+.post-title {
+    font-size: 1.35rem;
+    margin-bottom: 1rem;
+    color: var(--charcoal);
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+.post-excerpt {
+    color: var(--soft-grey);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.post-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.post-date {
+    font-size: 0.85rem;
+    color: var(--soft-grey);
+}
+
+.read-more {
+    display: inline-flex;
+    align-items: center;
+    color: var(--dusty-rose);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    padding: 0.5rem 0;
+}
+
+.read-more:hover {
+    color: var(--charcoal);
+    transform: translateX(5px);
+}
+
+.read-more::after {
+    content: '→';
+    margin-left: 5px;
+    transition: var(--transition);
+}
+
+.read-more:hover::after {
+    transform: translateX(3px);
+}
+
+/* Full Post Styles */
+.post-details {
+    display: block;
+}
+
+.full-post {
+    background: white;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.07);
+    margin-bottom: 2rem;
+}
+
+.full-post h2 {
+    color: var(--dusty-rose);
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 2.2rem;
+}
+
+.post-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.post-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.post-text h3 {
+    color: var(--dusty-rose);
+    margin: 2rem 0 1rem;
+    font-size: 1.4rem;
+}
+
+.post-text p {
+    margin-bottom: 1.2rem;
+}
+
+.hashtags {
+    color: var(--soft-grey);
+    font-style: italic;
+    margin-top: 2rem;
+    font-size: 1rem;
+}
+
+/* Contact Section Styles */
+.contact-section {
+    background-color: var(--light-beige);
+    padding: 5rem 0;
+    text-align: center;
+    position: relative;
+}
+
+.contact-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--soft-grey), transparent);
+}
+
+.contact-info {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.15rem;
+}
+
+.contact-info p {
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.contact-icon {
+    width: 20px;
+    height: 20px;
+    fill: var(--dusty-rose);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: white;
+    color: var(--dusty-rose);
+    text-decoration: none;
+    transition: var(--transition);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    font-weight: 500;
+}
+
+.social-link:hover {
+    background-color: var(--dusty-rose);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--charcoal);
+    color: white;
+    text-align: center;
+    padding: 2.5rem 0;
+    font-size: 0.95rem;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+    opacity: 0.8;
+}
+
+/* Animation for elements */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .posts-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .posts-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    h1 {
+        font-size: 2.2rem;
+    }
+    
+    .profile-img {
+        width: 170px;
+        height: 170px;
+    }
+    
+    .container {
+        padding: 3rem 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .social-links {
+        gap: 1.5rem;
+    }
+    
+    .full-post {
+        padding: 2rem 1.5rem;
+    }
+    
+    .post-images {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-content {
+        padding: 0 1rem;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    .tagline {
+        font-size: 1.1rem;
+    }
+    
+    .intro {
+        font-size: 1rem;
+    }
+    
+    .container {
+        padding: 2rem 1rem;
+    }
+    
+    .post-content {
+        padding: 1.5rem;
+    }
+    
+    .contact-info p {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .full-post {
+        padding: 1.5rem 1rem;
+    }
+    
+    .full-post h2 {
+        font-size: 1.8rem;
+    }
+}
